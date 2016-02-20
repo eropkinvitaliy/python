@@ -6,8 +6,8 @@ while True:
     client, addr = s.accept()
     print(addr)	  
     data = client.recv(1024)  
+    client.settimeout(60)
     if bytes('close'.encode('utf-8')) in data:  
-        print('connect close')
         client.close()                                                          
         s.close()                                                               
         break                                                                  
