@@ -12,13 +12,4 @@ while True:
         s.close()                                                               
         break                                                                  
     if data:              
-        client.sendall(bytes("""HTTP/1.1 200 OK \r\n Content-Type: text/html; charset=utf-8 \r\n\n <!DOCTYPE html>
-	<html lang="en">
-	<head>
-    	<meta charset="UTF-8">
-	<title>Document</title>
-	</head>
-	<body>
-	<h1>Hello</h1>
-	</body>
-	</html>""".encode('utf-8')))
+        client.send(data)
